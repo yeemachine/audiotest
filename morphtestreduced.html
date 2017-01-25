@@ -56,8 +56,7 @@
 			var listener = new THREE.AudioListener();
 							camera.add(listener);
 
-							analyser1 = new THREE.AudioAnalyser(sound1, 32);
-							listener.setMasterVolume(0);
+
 
 						var material = new THREE.MeshLambertMaterial({
 							morphTargets: true,
@@ -184,7 +183,8 @@
 			// var prevFog = false;
 
 			var render = function () {
-
+				analyser1 = new THREE.AudioAnalyser(sound1, 32);
+				listener.setMasterVolume(0);
 				requestAnimationFrame( render );
 				var delta = clock.getDelta();
 				controls.update(delta);

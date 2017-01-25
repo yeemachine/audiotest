@@ -52,9 +52,13 @@
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			// renderer.setClearColor( 0x000000 );
 			document.body.appendChild( renderer.domElement );
+			function init() {
 
 			var listener = new THREE.AudioListener();
 							camera.add(listener);
+
+							analyser1 = new THREE.AudioAnalyser(sound1, 32);
+							listener.setMasterVolume(0);
 
 						var material = new THREE.MeshLambertMaterial({
 							morphTargets: true,
@@ -176,8 +180,7 @@
 			updateMorphs(mesh, material);
 
 
-			analyser1 = new THREE.AudioAnalyser(sound1, 32);
-			listener.setMasterVolume(0);
+
 
 			// var prevFog = false;
 
@@ -232,7 +235,7 @@
 				renderer.setSize( window.innerWidth, window.innerHeight );
 
 			}, false );
-
+}
 			render();
 		</script>
 	</body>

@@ -128,7 +128,12 @@
 			lightsphere.add( lights[ 1 ] );
 			lightsphere.add( lights[ 2 ] );
 
-
+			var sound1 = new THREE.PositionalAudio(listener);
+					sound1.load('sounds/Hiei1.ogg');
+					sound1.setRefDistance(20);
+					sound1.autoplay = true;
+					sound1.setLoop(true);
+					lightsphere.add(sound1);
 
 
 
@@ -149,12 +154,7 @@
 				lightsphereclone.rotation.z = (Math.random() - 0.5) * 5;
 				lightsphereclone.rotation.y = (Math.random() - 0.5) * 5;
 				lightsphereclone.rotation.x = (Math.random() - 0.5) * 5;
-				var sound1 = new THREE.PositionalAudio(listener);
-						sound1.load('sounds/Hiei1.ogg');
-						sound1.setRefDistance(20);
-						sound1.autoplay = true;
-						sound1.setLoop(true);
-						lightsphereclone.add(sound1);
+
 			var pivot = [];
 
 			var pivot = new THREE.Object3D();

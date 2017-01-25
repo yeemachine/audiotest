@@ -178,13 +178,13 @@
 			updateMorphs(mesh, material);
 
 
-
+			analyser1 = new THREE.AudioAnalyser(sound1, 32);
+			listener.setMasterVolume(.5);
 
 			// var prevFog = false;
 
 			var render = function () {
-				analyser1 = new THREE.AudioAnalyser(sound1, 32);
-				listener.setMasterVolume(0);
+
 				requestAnimationFrame( render );
 				var delta = clock.getDelta();
 				controls.update(delta);

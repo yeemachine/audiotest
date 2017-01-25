@@ -133,18 +133,13 @@
 
 			var mesh = new THREE.Mesh( geometry, material );
 			mesh.position.x=0
-			var sound1 = new THREE.PositionalAudio(listener);
-					sound1.load('sounds/Hiei1.ogg');
-					sound1.setRefDistance(20);
-					sound1.autoplay = true;
-					sound1.setLoop(true);
-					mesh.add(sound1);
+
 			lightsphere.add( mesh );
 
 			//
 			// lightsphere.position.x = 50;
 
-			for (var i = 0; i < 10; i++) {
+			for (var i = 0; i < 1; i++) {
 				var lightsphereclone = lightsphere.clone();
 				lightsphereclone.position.x = (Math.random() - 0.5) * 500;
 				lightsphereclone.position.y = (Math.random() - 0.5) * 500;
@@ -152,7 +147,12 @@
 				lightsphereclone.rotation.z = (Math.random() - 0.5) * 5;
 				lightsphereclone.rotation.y = (Math.random() - 0.5) * 5;
 				lightsphereclone.rotation.x = (Math.random() - 0.5) * 5;
-
+				var sound1 = new THREE.PositionalAudio(listener);
+						sound1.load('sounds/Hiei1.ogg');
+						sound1.setRefDistance(20);
+						sound1.autoplay = true;
+						sound1.setLoop(true);
+						lightsphereclone.add(sound1);
 			var pivot = [];
 
 			var pivot = new THREE.Object3D();
